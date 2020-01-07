@@ -1,0 +1,51 @@
+<mat-card class="example-card">
+	<mat-card-header>
+		<mat-card-title>TTT</mat-card-title>
+		<mat-card-subtitle>card game</mat-card-subtitle>
+	</mat-card-header>
+	Overall Stats
+	<hr /><br />
+	<mat-card-content>
+		<p>
+			Total games: {{data.games}}
+		</p>
+		<p>
+			Wins: {{data.wins}} ({{(data.wins/data.games*100) | number}}%)
+		</p>
+		<p>
+			Losses: {{data.losses}} ({{(data.losses/data.games*100) | number}}%)
+		</p>
+		<p>
+			Draws: {{data.draws}} ({{(data.draws/data.games*100) | number}}%)
+		</p>
+    		<p>
+			Unique NPCs: {{data.uniqueNPCS}}
+		</p>
+	</mat-card-content>
+</mat-card>
+<table *ngIf='data' mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+	<ng-container matColumnDef="datetime">
+		<th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+		<td mat-cell *matCellDef="let match"> {{match.datetime}} </td>
+	</ng-container>
+	<ng-container matColumnDef="npc">
+		<th mat-header-cell *matHeaderCellDef mat-sort-header> NPC </th>
+		<td mat-cell *matCellDef="let match"> {{match.npc}} </td>
+	</ng-container>
+	<ng-container matColumnDef="duration">
+		<th mat-header-cell *matHeaderCellDef mat-sort-header> Duration </th>
+		<td mat-cell *matCellDef="let match"> {{match.duration}} </td>
+	</ng-container>
+	<ng-container matColumnDef="rules">
+		<th mat-header-cell *matHeaderCellDef mat-sort-header> Rules </th>
+		<td mat-cell *matCellDef="let match"> {{match.rules}} </td>
+	</ng-container>
+	<ng-container matColumnDef="outcome">
+		<th mat-header-cell *matHeaderCellDef mat-sort-header> Outcome </th>
+		<td mat-cell *matCellDef="let match"> {{match.outcome}} </td>
+	</ng-container>
+
+
+	<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+	<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
