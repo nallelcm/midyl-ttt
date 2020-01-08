@@ -5,12 +5,14 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { MatTableModule } from "@angular/material/table";
 import { MatSortModule } from "@angular/material/sort";
+import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatCardModule } from "@angular/material/card";
 
 import { AppComponent } from "./app.component";
 import { HelloComponent } from "./hello.component";
 import { DataService } from "./data.service";
 import { GameResultComponent } from "./game-result/game-result.component";
+import { OverallStatsComponent } from './overall-stats/overall-stats.component';
 
 @NgModule({
   imports: [
@@ -20,9 +22,10 @@ import { GameResultComponent } from "./game-result/game-result.component";
     MatTableModule,
     MatSortModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    MatPaginatorModule
   ],
-  declarations: [AppComponent, HelloComponent, GameResultComponent],
+  declarations: [AppComponent, HelloComponent, GameResultComponent, OverallStatsComponent],
   bootstrap: [AppComponent],
   providers: [DataService]
 })

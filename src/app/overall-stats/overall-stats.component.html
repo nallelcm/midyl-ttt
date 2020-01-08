@@ -1,0 +1,25 @@
+<mat-card *ngIf='data'>
+	<mat-card-header>
+		<mat-card-title>TTT</mat-card-title>
+		<mat-card-subtitle>card game</mat-card-subtitle>
+	</mat-card-header>
+	Overall Stats
+	<hr /><br />
+	<mat-card-content>
+		<p>
+			Total games: {{data.games}}
+		</p>
+		<p>
+			Wins: {{data.wins}} ({{(data.wins/data.games*100) | number}}%)
+		</p>
+		<p>
+			Losses: {{data.losses}} ({{(data.losses/data.games*100) | number}}%)
+		</p>
+		<p>
+			Draws: {{data.draws}} ({{(data.draws/data.games*100) | number}}%)
+		</p>
+		<p>
+			Unique NPCs: {{data.uniqueNPCS}}
+		</p>
+	</mat-card-content>
+</mat-card>
