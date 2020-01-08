@@ -19,14 +19,13 @@ export class GameResultComponent implements OnInit {
   ];
   constructor(private api: DataService) {}
   @ViewChild(MatSort, { static: true }) sort: MatSort;
-  ngOnInit() {
+  ngOnInit() {}
+  ngAfterViewInit() {
     this.showData();
   }
-
   showData() {
     this.api.getData().subscribe(data => {
       this.data = data;
-      this.data.matches.sort = this.sort;
       this.dataSource = new MatTableDataSource(data.matches);
       this.dataSource.sort = this.sort;
     });

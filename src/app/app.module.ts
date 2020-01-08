@@ -5,7 +5,7 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { MatTableModule } from "@angular/material/table";
 import { MatSortModule } from "@angular/material/sort";
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from "@angular/material/card";
 
 import { AppComponent } from "./app.component";
 import { HelloComponent } from "./hello.component";
