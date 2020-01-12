@@ -1,4 +1,5 @@
 <div class="mat-elevation-z8">
+<button mat-stroked-button (click)="showData()">Refresh</button>
 	<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 		<ng-container matColumnDef="datetime">
 			<th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>

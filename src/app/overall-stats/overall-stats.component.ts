@@ -15,7 +15,7 @@ export class OverallStatsComponent implements OnInit {
     this.showData();
   }
   showData() {
-    this.api.getData().subscribe(data => {
+    this.api.getMatches().subscribe(data => {
       this.data = data;
     });
   }
